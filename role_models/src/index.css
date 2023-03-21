@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Satisfy&display=swap');
 
 :root {
-    --darkcolorRGB: 42, 57, 39;
+    --darkcolorRGB: 63, 63, 63;
     --darkcolor: #3F3F3F;
     --purple: #8246ae;
     --yellow: #F9A426;
@@ -31,7 +31,7 @@ body {
 
 h1,
 h2 {
-    font-family: var(--fancy-font);
+    font-family: var(--block-font);
 }
 
 h1 {
@@ -75,7 +75,7 @@ li {
     background-color: var(--purple);
     padding: 10px 20px;
     border-radius: 5px;
-    border: 1px solid rgb(14, 156, 156);
+    border: 1px solid var(--purple);
     color: white;
     box-shadow: 0px 0.5px 2px 0px rgb(174, 174, 174);
     font-size: 16px;

@@ -1,0 +1,30 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkcolor);
+    padding: 40px 80px 60px;
+    color: white;
+    height: 250px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.left-title {
+    padding: 10px 0 20px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.social-logo {
+    margin: 5px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+}

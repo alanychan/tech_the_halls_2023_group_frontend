@@ -5,8 +5,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 // Pages
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
-import ProjectPage from "./pages/ProfilePage";
-import CreateProjectPage from "./pages/EditProfilePage";
+import ProfilePage from "./pages/ProfilePage";
+import EditProfilePage from "./pages/EditProfilePage";
 
 // Components
 import Nav from "./components/Nav/Nav";
@@ -21,6 +21,7 @@ const HeaderLayout = () => {
     <>
       <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Outlet context={[loggedIn, setLoggedIn]} />
+      <Footer />
     </>
   );
 }
