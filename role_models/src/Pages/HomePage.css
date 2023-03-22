@@ -19,11 +19,24 @@ body {}
 }
 
 .stats {
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
     margin: 30px;
     width: 300px;
     min-width: 300px;
     height: 200px;
+    align-items: center;
+    align-content: center;
+}
+
+.stats p {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 82px;
+    font-weight: 800;
 }
 
 .profiles-shuffle-board {
