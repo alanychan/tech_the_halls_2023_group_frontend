@@ -37,11 +37,11 @@ function HomePage() {
             <h1>Home Page</h1>
             <p>Maybe a tagline here</p>            
             <div className="hero-section">
-                <section id="hero-section">
-                {heroList.map((hero, key) => {
+                    <h2>Meet our tech heroes</h2>
+                    <HeroCard/>
+                {/* {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
-                })}
-                </section>
+                })} */}
             </div>
             
             <div className="stats-section">
@@ -61,9 +61,10 @@ function HomePage() {
                 </div>
             </div>
             <div className="profiles-shuffle-board">
-                {profileList.map((profile, key) => {
+                <ProfileCard/>
+                {/* {profileList.map((profile, key) => {
                         return <ProfileCard key={key} profileData={profile} />;
-                    })}
+                    })} */}
             </div>
         </div>
     );
