@@ -37,11 +37,11 @@ function HomePage() {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
             </div>
-            <div>
+            <section id="hero-section">
                 {profileList.map((profile, key) => {
                         return <ProfileCard key={key} profileData={profile} />;
                     })}
-            </div> */}
+            </section> */}
         </div>
     );
 }
