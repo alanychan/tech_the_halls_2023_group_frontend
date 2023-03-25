@@ -32,7 +32,7 @@ function HomePage() {
         <div className="page-container">
             <h1>Home Page</h1>
             <p>Be the change you want to see.</p>
-            <div>
+            {/* <div>
                 {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
@@ -41,7 +41,7 @@ function HomePage() {
                 {profileList.map((profile, key) => {
                         return <ProfileCard key={key} profileData={profile} />;
                     })}
-            </div>
+            </div> */}
         </div>
     );
 }

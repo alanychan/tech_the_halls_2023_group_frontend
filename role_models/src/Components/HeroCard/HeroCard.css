@@ -1,3 +1,22 @@
 .hero-card {
+    padding: 10px;
+    border: 1px solid rgb(227, 227, 227);
+    box-shadow: 0px 0px 8px 1px rgb(227, 227, 227);
+    margin: 10px;
+    display: flex;
+}
+
+.hide {
     width: 200px;
 }
+
+.hero-card img {
+    width: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-card p {
+    margin: 20px 10px;
+}
+
