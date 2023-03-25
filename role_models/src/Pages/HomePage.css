@@ -21,6 +21,7 @@ body {}
 .stats {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     border: 1px solid blue;
     margin: 30px;
     width: 300px;
