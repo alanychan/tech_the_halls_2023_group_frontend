@@ -30,7 +30,7 @@ function HeroCard() {
             alt="Photo of Hedy Lamarr"/>
             <div className="hide">
                 <h3>Hedy Lamarr</h3>
-                <p>Hedy was a film actress and self-taught inventor. She is credited as the inventor of the Wi-Fi, GPS and Bluetooth technology.
+                <p>Hedy was a film actress and self-taught inventor. She is credited as the inventor of Wi-Fi, GPS and Bluetooth technology.
                 </p>
                 <Link to="https://en.wikipedia.org/wiki/Hedy_Lamarr" target="_blank">Find out more</Link>
             </div>
