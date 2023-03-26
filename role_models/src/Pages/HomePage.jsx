@@ -62,6 +62,7 @@ function HomePage() {
             </div>
             <div className="profiles-shuffle-board">
                 <ProfileCard/>
+                <ProfileCard/>
                 {/* {profileList.map((profile, key) => {
                         return <ProfileCard key={key} profileData={profile} />;
                     })} */}
