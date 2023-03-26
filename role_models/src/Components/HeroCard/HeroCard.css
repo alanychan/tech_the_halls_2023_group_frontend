@@ -1,26 +1,30 @@
 .hero-card {
-    /* width: 250px; */
     padding: 10px;
-    border: 1px solid rgb(227, 227, 227);
+    border: var(--card-border);
     box-shadow: var(--box-shadow);
+    border-radius: 5px;
     margin: 10px;
     display: flex;
 }
 
 .hide {
     width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hero-card img {
-    width: 200px;
+    width: 150px;
     object-fit: cover;
     object-position: center;
 }
 
-.hero-card p {
+.hero-card p, .hero-card a {
     margin: 20px 10px;
 }
 
-/* .hero-card .btn {
-    margin: 10px;
-} */
+.hero-card a {
+    color: var(--purple);
+}
+

@@ -1,10 +1,26 @@
 .project-card {
     padding: 10px;
-    border: 1px solid rgb(227, 227, 227);
-    box-shadow: 0px 0px 8px 1px rgb(227, 227, 227);
+    border: var(--card-border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
     margin: 10px;
+    width: 300px;
+    transition: 0.5s;
+}
+
+.project-card:hover {
+    transform: translate(0, -10px);
+    box-shadow: var(--purple);
+}
+
+.project-card a {
     display: flex;
-    /* height: 250px; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card a:hover {
+    opacity: 1 !important;
 }
 
 .project-card img {
