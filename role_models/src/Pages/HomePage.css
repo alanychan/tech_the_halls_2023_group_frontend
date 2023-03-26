@@ -1,4 +1,4 @@
-body {}
+/* body {} */
 
 .hero-section {
     width: 90%;
@@ -52,4 +52,10 @@ body {}
     max-width: 1200px;
     min-width: 400px;
     margin: 30px;
+}
+
+.redirect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
