@@ -35,15 +35,15 @@ function HomePage() {
     return (
         <div className="page-container">
             <h1>Home Page</h1>
-            <p>Maybe a tagline here</p>            
+            <p>Maybe a tagline here</p>
             <div className="hero-section">
-                    <h2>Meet our tech heroes</h2>
-                    <HeroCard/>
+                <h2>Meet our tech heroes</h2>
+                <HeroCard />
                 {/* {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })} */}
             </div>
-            
+
             <div className="stats-section">
                 <div className="stats">
                     <h3>Did you know?</h3>
@@ -56,13 +56,14 @@ function HomePage() {
                     <p>Represents the global increase of female software engineers in the past 21 years</p>
                 </div>
                 <div className="stats">
-                    <h3>Stat 3</h3>
-                    <p>Mindblowing stat</p>
+                    <h3>Community Pillars</h3>
+                    <p className="stat-number">5,560</p>
+                    <p>women have been taught by SheCodes since its inception</p>
                 </div>
             </div>
             <div className="profiles-shuffle-board">
-                <ProfileCard/>
-                <ProfileCard/>
+                <ProfileCard />
+                <ProfileCard />
                 {/* {profileList.map((profile, key) => {
                         return <ProfileCard key={key} profileData={profile} />;
                     })} */}
