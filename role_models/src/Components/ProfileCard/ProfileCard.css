@@ -10,7 +10,7 @@
 
 .project-card:hover {
     transform: translate(0, -10px);
-    box-shadow: var(--purple);
+    box-shadow: none;
 }
 
 .project-card a {
