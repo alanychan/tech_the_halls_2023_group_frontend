@@ -35,7 +35,7 @@ function HomePage() {
     return (
         <div className="page-container">
             <h1>Home Page</h1>
-            <p>Maybe a tagline here</p>
+            <p>Breaking Industry Barriers</p>
             <div className="hero-section">
                 <h2>Meet our tech heroes</h2>
                 <HeroCard />
