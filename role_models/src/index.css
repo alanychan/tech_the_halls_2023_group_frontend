@@ -101,7 +101,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-/*     max-width: 80%; */
+    /*     max-width: 80%; */
 }
 
 .column-container {
@@ -110,7 +110,7 @@ li {
     max-width: 80%;
     margin: 50px auto 120px;
     gap: 45px 40px;
-    text-align: justify;
+    text-align: left;
 }
 
 /* ---------------------- Form Styling---------------------- */
