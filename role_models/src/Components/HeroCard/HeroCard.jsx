@@ -12,7 +12,7 @@ function HeroCard() {
             <div className="hide">
                 <h3>Danielle Bunten Berry</h3>
                 <p>Danielle is credited as being the first programmer and trans woman to develop a multiplayer game!</p>
-                <Link href="https://news.uark.edu/articles/60215/pride-month-danielle-dani-bunten-berry">Find out more</Link>
+                <Link to="https://news.uark.edu/articles/60215/pride-month-danielle-dani-bunten-berry" target="_blank">Find out more</Link>
             </div>
         </div >
         <div className="hero-card">
@@ -22,7 +22,7 @@ function HeroCard() {
                 <h3>Annie Easley</h3>
                 <p>Annie began her career with NASA as a "human computer" and later became an adept computer programmer.
                 </p>
-                <Link href="https://www.nasa.gov/feature/annie-easley-computer-scientist">Find out more</Link>
+                <Link to="https://www.nasa.gov/feature/annie-easley-computer-scientist" target="_blank">Find out more</Link>
             </div>
         </div >
         <div className="hero-card">
@@ -32,7 +32,7 @@ function HeroCard() {
                 <h3>Hedy Lamarr</h3>
                 <p>Hedy was a film actress and self-taught inventor. She is credited as the inventor of the Wi-Fi, GPS and Bluetooth technology.
                 </p>
-                <Link href="https://en.wikipedia.org/wiki/Hedy_Lamarr">Find out more</Link>
+                <Link to="https://en.wikipedia.org/wiki/Hedy_Lamarr" target="_blank">Find out more</Link>
             </div>
         </div >
         </>
