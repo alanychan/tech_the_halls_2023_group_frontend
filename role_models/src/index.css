@@ -9,6 +9,7 @@
     --block-font: 'Bebas Neue', sans-serif;
     --text-font: 'Raleway', sans-serif;
     --box-shadow: 0px 0px 8px 1px rgb(227, 227, 227);
+    --card-border: 1px solid rgb(227, 227, 227);
 }
 
 * {
