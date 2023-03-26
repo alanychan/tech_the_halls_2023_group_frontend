@@ -1,11 +1,11 @@
+import CreateProfileForm from "../components/CreateProfileForm/CreateProfileForm";
 
 function EditProfilePage() {
 
     return (
         <div className="page-container">
-            <h1>Edit Profile</h1>
-            <p>Update your profile here.</p>
-
+            <h1>Update your Profile!</h1>
+            <CreateProfileForm />
         </div>
     );
 }
