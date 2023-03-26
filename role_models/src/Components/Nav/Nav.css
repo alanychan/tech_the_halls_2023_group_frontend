@@ -1,28 +1,68 @@
 nav {
     background-color: white;
-    height: 40px;
+    /* height: 40px; */
+    height: 55px;
     box-shadow: var(--box-shadow);
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+
+    
 }
+
+/* * {
+    border: 1px solid red;
+} */
 
 /* General .btn styling set globally */
 .login-btn {
     max-width: 120px;
-    height: 30px;
+    /* padding-top: 3rem;
+    padding-bottom: 0rem; */
+    padding-right: 3rem;
+    height: 40px;
     margin: 5px;
     padding: 5px 10px !important;
+    margin-right: 2.5rem;
 }
 
-#logo img {
-    height: 30px;
-    margin: 5px auto;
+.login-btn:hover {
+    /* background-color: #F9A426; yellow as per shecodes colors */
+    background-color: #3F3F3F; 
+    color: white;
+
 }
+
+    
+
+#logo img {
+    margin-left: 2.5rem;
+    height: 50px;
+    padding-left: 1.5rem;
+    
+    
+}
+
+/* nav a:hover, nav a:focus {
+    color: black;
+    background-color: rgb(122, 128, 212);
+    font-weight: bold;
+  }  */
+
+ 
+
+
+/* .logoright {
+    margin-right: 0px !important;
+    margin-left: auto !important;
+  } */
 
 .menu-link {
     justify-content: center;
-    padding: 10px;
+    padding: 100px;
 }
 
 /* @media (min-width: 500px) {
@@ -40,3 +80,5 @@ nav {
         justify-content: space-evenly;
     }
 } */
+
+
