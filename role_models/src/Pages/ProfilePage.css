@@ -1,0 +1,23 @@
+/* * {
+    border: 1px solid red;
+} */
+
+h3 {
+    padding-left: 0 !important;
+}
+
+.profile-contacts {
+    text-align: left;
+}
+
+video,
+.profile-img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 320px) {
+    .column-container {
+        grid-template-columns: 1fr;
+    }
+}
