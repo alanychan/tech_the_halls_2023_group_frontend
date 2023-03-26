@@ -101,7 +101,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 80%;
+/*     max-width: 80%; */
 }
 
 .column-container {
