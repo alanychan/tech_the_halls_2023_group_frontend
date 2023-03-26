@@ -6,6 +6,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LogInPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
+import CreateProfilePage from "./pages/CreateProfilePage";
 import EditProfilePage from "./pages/EditProfilePage";
 
 // Components
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LogInPage /> },
       { path: "/profile/:id", element: <ProfilePage /> },
+      { path: "/create-profile", element: <CreateProfilePage /> },
       { path: "/edit-profile", element: <EditProfilePage /> },
       { path: "/signout", element: <HomePage /> },
     ],
