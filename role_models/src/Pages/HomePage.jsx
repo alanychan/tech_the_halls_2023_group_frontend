@@ -37,7 +37,7 @@ function HomePage() {
             <h1 className="brandname-tech">tech <span className="brandname-div">&#60;Div&#62;</span><span className="brandname-ersity">ersity</span></h1>
             <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
-                <h2>Meet our tech heroes</h2>
+                <h2>Tech trailblazers</h2>
                 <HeroCard />
                 {/* {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
@@ -61,7 +61,9 @@ function HomePage() {
                     <p>women have been taught by SheCodes since its inception</p>
                 </div>
             </div>
-            <div className="profiles-shuffle-board">
+            <div id="p1" className="profiles-shuffle-board">
+                <h2>Today's tech trailblazers</h2>
+                <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
                 <ProfileCard />
                 <ProfileCard />
                 {/* {profileList.map((profile, key) => {
