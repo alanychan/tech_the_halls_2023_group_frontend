@@ -73,6 +73,31 @@ li {
     border-radius: 5px;
 }
 
+.brandname-tech {
+    font-weight: 800;
+    font-family: var(--text-font);
+    color: var(--purple);
+    font-size: 90px;
+    margin-top: 50px;
+}
+
+.brandname-div {
+    font-family: var(--block-font);
+    color: var(--darkcolor);
+}
+
+.brandname-ersity {
+    font-family: var(--block-font);
+    color: var(--yellow);
+}
+
+.tagline {
+    font-family: var(--fancy-font);
+    font-size: 26px;
+    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
 .btn {
     background-color: var(--purple);
     padding: 10px 20px;

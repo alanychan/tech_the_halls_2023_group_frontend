@@ -34,8 +34,8 @@ function HomePage() {
 
     return (
         <div className="page-container">
-            <h1>Home Page</h1>
-            <p>Breaking Industry Barriers</p>
+            <h1 className="brandname-tech">tech <span className="brandname-div">&#60;Div&#62;</span><span className="brandname-ersity">ersity</span></h1>
+            <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
                 <h2>Meet our tech heroes</h2>
                 <HeroCard />
@@ -72,7 +72,7 @@ function HomePage() {
                 <h2>Get started in your tech career!</h2>
                 <Link className="btn" to="https://shecodes.com.au/">Visit the She Codes website</Link>
             </div>
-        </div>
+        </div >
     );
 }
 
