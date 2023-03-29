@@ -7,7 +7,7 @@ import './HomePage.css';
 
 // Components
 import HeroCard from "../Components/HeroCard/HeroCard";
-import ProfileCard from "../components/ProfileCard/ProfileCard";
+import ProfileCard from "../Components/ProfileCard/ProfileCard";
 
 function HomePage() {
     //state
