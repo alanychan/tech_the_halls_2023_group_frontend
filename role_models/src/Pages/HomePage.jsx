@@ -11,11 +11,11 @@ import ProfileCard from "../components/ProfileCard/ProfileCard";
 
 function HomePage() {
     //state
-    // const [heroList, setHeroList] = usestate([]);
+    const [heroList, setHeroList] = useState([]);
     // const [profileList, setProfileList] = useState([]);
 
     // Effects
-    // useEffect(() => {
+    useEffect(() => {
     //     fetch(`${import.meta.env.VITE_API_URL}profile`)
     //         .then((results) => {
     //             return results.json();
@@ -23,25 +23,25 @@ function HomePage() {
     //         .then((data) => {
     //             setProfileList(data);
 
-    // fetch(`${import.meta.env.VITE_API_URL}hero`)
-    //         .then((results) => {
-    //             return results.json();
-    //         })
-    //         .then((data) => {
-    //             setHeroList(data);
-    //         });
-    // }, []);
+    fetch(`${import.meta.env.VITE_API_URL}hero`)
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setHeroList(data);
+            });
+    }, []);
 
     return (
         <div className="page-container">
-            <h1>Home Page</h1>
-            <p>Breaking Industry Barriers</p>
+            <h1 className="brandname-tech">tech <span className="brandname-div">&#60;Div&#62;</span><span className="brandname-ersity">ersity</span></h1>
+            <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
-                <h2>Meet our tech heroes</h2>
-                <HeroCard />
-                {/* {heroList.map((hero, key) => {
+                <h2>Tech trailblazers</h2>
+                {/* <HeroCard /> */}
+                {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
-                })} */}
+                })}
             </div>
 
             <div className="stats-section">
@@ -61,7 +61,9 @@ function HomePage() {
                     <p>women have been taught by SheCodes since its inception</p>
                 </div>
             </div>
-            <div className="profiles-shuffle-board">
+            <div id="p1" className="profiles-shuffle-board">
+                <h2>Today's tech trailblazers</h2>
+                <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
                 <ProfileCard />
                 <ProfileCard />
                 {/* {profileList.map((profile, key) => {
@@ -72,7 +74,7 @@ function HomePage() {
                 <h2>Get started in your tech career!</h2>
                 <Link className="btn" to="https://shecodes.com.au/">Visit the She Codes website</Link>
             </div>
-        </div>
+        </div >
     );
 }
 
