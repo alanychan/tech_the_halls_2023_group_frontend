@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './Nav.css'
+import techdiversity from '../../assets/Images/TechDiversity_logo.png';
 function Nav(props) {
     const { loggedIn, setLoggedIn } = props
     const handleClick = () => {
@@ -8,11 +9,15 @@ function Nav(props) {
     }
     return (
         <nav>
-            <div id="logo">
+            {/* <div id="logo">
                 <img src="https://i.postimg.cc/3Jy2bvqq/Updated-Tech-Diversity-logo.png" alt="logo" />
             </div>
             <div id="menu-link">
-                <Link to="/">Home</Link>
+                <Link to="/">Home</Link> */}
+            <div id="logo">
+                    <Link to="/">
+                    <img src={techdiversity}/>
+                    </Link>
             </div>
             {/* <div id="profile-page">
             <Link to="/profile-page">Profile</Link>
