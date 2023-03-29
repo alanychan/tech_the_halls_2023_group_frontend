@@ -1,4 +1,4 @@
-import CreateProfileForm from "../components/CreateProfileForm/CreateProfileForm";
+import CreateProfileForm from "../Components/CreateProfileForm/CreateProfileForm";
 
 function EditProfilePage() {
 
