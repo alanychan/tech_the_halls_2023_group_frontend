@@ -11,11 +11,11 @@ import ProfileCard from "../components/ProfileCard/ProfileCard";
 
 function HomePage() {
     //state
-    // const [heroList, setHeroList] = usestate([]);
+    const [heroList, setHeroList] = useState([]);
     // const [profileList, setProfileList] = useState([]);
 
     // Effects
-    // useEffect(() => {
+    useEffect(() => {
     //     fetch(`${import.meta.env.VITE_API_URL}profile`)
     //         .then((results) => {
     //             return results.json();
@@ -23,14 +23,14 @@ function HomePage() {
     //         .then((data) => {
     //             setProfileList(data);
 
-    // fetch(`${import.meta.env.VITE_API_URL}hero`)
-    //         .then((results) => {
-    //             return results.json();
-    //         })
-    //         .then((data) => {
-    //             setHeroList(data);
-    //         });
-    // }, []);
+    fetch(`${import.meta.env.VITE_API_URL}hero`)
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setHeroList(data);
+            });
+    }, []);
 
     return (
         <div className="page-container">
@@ -38,10 +38,10 @@ function HomePage() {
             <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
                 <h2>Tech trailblazers</h2>
-                <HeroCard />
-                {/* {heroList.map((hero, key) => {
+                {/* <HeroCard /> */}
+                {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
-                })} */}
+                })}
             </div>
 
             <div className="stats-section">
