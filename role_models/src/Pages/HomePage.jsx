@@ -65,8 +65,6 @@ function HomePage() {
             <div id="p1" className="profiles-shuffle-board">
                 <h2>Today's tech trailblazers</h2>
                 <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
-                {/* <ProfileCard />
-                <ProfileCard /> */}
                 {usersList.map((users, key) => {
                         return <ProfileCard key={key} usersData={users} />;
                     })}

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Link, useNavigate, useParams, useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./ProfileCard.css";
 
