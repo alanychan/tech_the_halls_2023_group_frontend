@@ -12,16 +12,18 @@ import ProfileCard from "../Components/ProfileCard/ProfileCard";
 function HomePage() {
     //state
     const [heroList, setHeroList] = useState([]);
-    // const [profileList, setProfileList] = useState([]);
+    const [usersList, setUsersList] = useState([]);
 
     // Effects
     useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}profile`)
-    //         .then((results) => {
-    //             return results.json();
-    //         })
-    //         .then((data) => {
-    //             setProfileList(data);
+
+    fetch(`${import.meta.env.VITE_API_URL}users`)
+        .then((results) => {
+            return results.json();
+        })
+        .then((data) => {
+            setUsersList(data);
+    }, []);
 
     fetch(`${import.meta.env.VITE_API_URL}hero`)
             .then((results) => {
@@ -38,7 +40,6 @@ function HomePage() {
             <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
                 <h2>Tech trailblazers</h2>
-                {/* <HeroCard /> */}
                 {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
@@ -64,11 +65,11 @@ function HomePage() {
             <div id="p1" className="profiles-shuffle-board">
                 <h2>Today's tech trailblazers</h2>
                 <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
-                <ProfileCard />
-                <ProfileCard />
-                {/* {profileList.map((profile, key) => {
-                        return <ProfileCard key={key} profileData={profile} />;
-                    })} */}
+                {/* <ProfileCard />
+                <ProfileCard /> */}
+                {usersList.map((users, key) => {
+                        return <ProfileCard key={key} usersData={users} />;
+                    })}
             </div>
             <div className="redirect">
                 <h2>Get started in your tech career!</h2>
@@ -76,7 +77,7 @@ function HomePage() {
             </div>
         </div >
     );
-}
+};
 
 export default HomePage;
 
