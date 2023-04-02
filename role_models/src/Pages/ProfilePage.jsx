@@ -1,9 +1,30 @@
+import { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+
 // Styles
 import './HomePage.css';
 import './ProfilePage.css';
 
 function ProfilePage() {
 
+    // Set state
+    const [profile, setProfile] = useState({});
+
+    // Hooks
+    const { id } = useParams();
+
+    //Effects
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_URL
+            }users/${id}`).then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setProfile(data);
+            });
+    }, []);
+
+    console.log(profile)
     return (
         <div className="column-container">
             {/* {loggedIn && <div className="edit-delete-btns">
@@ -15,8 +36,7 @@ function ProfilePage() {
                     alt="Photo of Danielle Bunten Berry" className="profile-img" />
             </div>
             <div className="top-right">
-                <h1 className="profile-name">Danielle Bunten Berry</h1>
-                {/* <h1>{`${user.name}`}</h1> */}
+                <h1>{profile.first_name} {profile.last_name}</h1>
                 <h3 className="profile-h3">She/Her</h3>
                 <h3 className="profile-h3 profile-tagline">As a trans woman, Berry is remembered for the gender barriers she broke in the gaming industry.</h3>
                 <br></br>
