@@ -62,10 +62,41 @@ footer {
 }
 
 #logo{
-    text-align: left;
-    margin-left: 2.5rem;
-    height: 50px;
-    padding-left: 1.5rem;
+    /* margin-left: 2.5rem; */
+    height: 80px;
+    /* padding-left: 1rem; */
     
     
 }
+
+@media (max-width: 600px) {
+    footer {
+        display: flex;
+    }
+
+    .left-side {
+        padding-left: 1px;
+        font-size: x-small;
+    }
+
+    .right-side {
+        padding-right: 1px;
+        font-size: x-small;
+    }
+
+    .right-title {
+        /* font-size: small;
+        text-align: end; */
+        display: none;
+    }
+
+    .socials_containers {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #logo {
+        height: 50px;
+    }
+} 
