@@ -19,12 +19,16 @@
     margin: 20px 10px;
 }
 
-.hero-card a {
-    color: var(--purple);
-}
-
 .hero-details {
     width: 300px;
     display: flex;
     flex-direction: column;
+}
+
+.hero-buttons {
+    display: flex;
+}
+
+.hero-buttons a {
+    margin: 10px;
 }
