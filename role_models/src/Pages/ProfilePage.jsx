@@ -1,9 +1,30 @@
+import { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+
 // Styles
 import './HomePage.css';
 import './ProfilePage.css';
 
 function ProfilePage() {
 
+    // Set state
+    const [profile, setProfile] = useState({});
+
+    // Hooks
+    const { id } = useParams();
+
+    //Effects
+    useEffect(() => {
+        fetch(`${import.meta.env.VITE_API_URL
+            }users/${id}`).then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setProfile(data);
+            });
+    }, []);
+
+    console.log(profile)
     return (
         <div className="column-container">
             {/* {loggedIn && <div className="edit-delete-btns">
@@ -15,8 +36,7 @@ function ProfilePage() {
                     alt="Photo of Danielle Bunten Berry" className="profile-img" />
             </div>
             <div className="top-right">
-                <h1 className="profile-name">Danielle Bunten Berry</h1>
-                {/* <h1>{`${user.name}`}</h1> */}
+                <h1>{profile.first_name} {profile.last_name}</h1>
                 <h3 className="profile-h3">She/Her</h3>
                 <h3 className="profile-h3 profile-tagline">As a trans woman, Berry is remembered for the gender barriers she broke in the gaming industry.</h3>
                 <br></br>
@@ -28,7 +48,7 @@ function ProfilePage() {
                 <p className="profile-question">This is the first section - sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat imperdiet sed euismod nisi porta lorem mollis</p>
                 <br></br>
                 <h3 className="profile-h3">What inspired you to get into tech?</h3>
-                <p className="profile-question">Sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu</p>
+                <p className="profile-question">{profile?.answers}Sagittis purus sit amet volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu</p>
                 <br></br>
                 <h3 className="profile-h3">What's been your biggest success?</h3>
                 <p className="profile-question">Viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti</p>
@@ -52,7 +72,7 @@ function ProfilePage() {
                 <div className="profile-contacts">
                     <h2>Get in touch!</h2>
                     <ul>
-                        <li>placeholder for social connect1</li>
+                        <li>Email: {profile.email}</li>
                         <li>placeholder for social connect2</li>
                         <li>placeholder for social connect3</li>
                     </ul>
