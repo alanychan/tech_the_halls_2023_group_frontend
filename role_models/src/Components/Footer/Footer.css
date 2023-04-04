@@ -76,12 +76,12 @@ footer {
 
     .left-side {
         padding-left: 1px;
-        font-size: x-small;
+        font-size: small;
     }
 
     .right-side {
         padding-right: 1px;
-        font-size: x-small;
+        font-size: small;
     }
 
     .right-title {
@@ -98,5 +98,10 @@ footer {
 
     #logo {
         height: 50px;
+        border: 2px dashed white;
+        padding: 2px;
+        background: white;
+        background-clip: border-box;
+        border-radius: 10px;
     }
 } 
