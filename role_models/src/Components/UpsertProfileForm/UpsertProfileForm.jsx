@@ -17,6 +17,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     city: userData?.city || "",
     country: userData?.country || "",
     featured: userData?.featured || false,
+    is_active: userData?.is_active || false,
     is_published: userData?.is_published || false,
     job_title: userData?.job_title || "",
     linkedin: userData?.linkedin || "",
@@ -26,7 +27,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     twitter: userData?.twitter || "",
     video: userData?.video || "",
 
-    // categories: userData?.categories || "",
+    //categories: userData?.categories || "",
     // user_answers: userData?.user_answers || ""
   });
 
@@ -112,7 +113,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
         {
           method: "PUT",
           headers: {
-            "Authorization": `Token ${authToken}`,
+            "Authorization": `Bearer ${authToken}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(user),
