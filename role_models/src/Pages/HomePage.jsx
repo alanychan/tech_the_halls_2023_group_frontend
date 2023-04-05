@@ -73,7 +73,7 @@ function HomePage() {
                 <h2>Get started in your tech career!</h2>
                 <Link className="btn" to="https://shecodes.com.au/">Visit the She Codes website</Link>
             </div>
-        </div >
+        </div>
     );
 };
 

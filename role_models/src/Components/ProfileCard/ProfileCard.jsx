@@ -15,7 +15,7 @@ function ProfileCard(props) {
                 <p>{usersData.pronouns}</p>
                 <p>{usersData.tagline}</p>
             </Link>
-        </div >
+        </div>
         </>
     );
 }
