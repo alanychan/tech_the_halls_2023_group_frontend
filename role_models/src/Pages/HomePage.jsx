@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 
 // Styles
 import './HomePage.css';
@@ -10,6 +10,8 @@ import HeroCard from "../Components/HeroCard/HeroCard";
 import ProfileCard from "../Components/ProfileCard/ProfileCard";
 
 function HomePage() {
+    const [loggedIn] = useOutletContext();
+
     //state
     const [heroList, setHeroList] = useState([]);
     const [usersList, setUsersList] = useState([]);
@@ -43,6 +45,10 @@ function HomePage() {
                 {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
+                {loggedIn&&
+                <div className="home-hero-buttons">
+                    <Link className="btn" to="/create-hero">Add a hero card</Link>
+                </div>}
             </div>
 
             <div className="stats-section">
