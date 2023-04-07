@@ -9,7 +9,8 @@ import ProfilePage from "./Pages/ProfilePage";
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import EditProfilePage from "./Pages/EditProfilePage";
 import CreateHeroPage from "./Pages/CreateHeroPage";
-import EditHeroPage from "./Pages/EditHeroPage";
+// import EditHeroPage from "./Pages/EditHeroPage";
+import HeroPage from "./Pages/HeroPage";
 
 // Components
 import Nav from "./Components/Nav/Nav";
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
       { path: "/edit-profile", element: <EditProfilePage /> },
       { path: "/signout", element: <HomePage /> },
       { path: "/create-hero", element: <CreateHeroPage /> },
-      { path: "/edit-hero/:id", element: <EditHeroPage /> },
+      // { path: "/edit-hero/:id", element: <EditHeroPage /> },
+      { path: "/hero/:id", element: <HeroPage /> },
     ],
   },
 ]);
