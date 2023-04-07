@@ -9,8 +9,8 @@ function CreateHeroForm() {
     const [hero, setHero] = useState({
       "name": "",
       "bio_text": "",
-      "bio_pic": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "bio_url": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "bio_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLC611GAbv5wr3eYiZ_SibGkcthY90jbQZFg&usqp=CAU",
+      "bio_url": "https://shecodes.com.au/",
       "featured": true,
       "date_created": new Date(),
     });
