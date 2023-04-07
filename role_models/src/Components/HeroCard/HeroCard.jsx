@@ -17,7 +17,7 @@ function HeroCard(props) {
                 <p>{heroData.bio_text}</p>
                 {loggedIn&&
                 <div className="hero-buttons">
-                    <Link className="btn" to="/edit-hero/:id">Edit</Link>
+                    <Link className="btn" to={`/hero/${heroData.id}`}>Edit</Link>
                     <Link className="btn" to="">Delete</Link>
                 </div>
                 }
