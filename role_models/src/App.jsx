@@ -9,8 +9,8 @@ import ProfilePage from "./Pages/ProfilePage";
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import EditProfilePage from "./Pages/EditProfilePage";
 import CreateHeroPage from "./Pages/CreateHeroPage";
-// import EditHeroPage from "./Pages/EditHeroPage";
 import HeroPage from "./Pages/HeroPage";
+import HeroListPage from "./Pages/HeroListPage";
 
 // Components
 import Nav from "./Components/Nav/Nav";
@@ -42,6 +42,7 @@ const router = createBrowserRouter([
       { path: "/signout", element: <HomePage /> },
       { path: "/create-hero", element: <CreateHeroPage /> },
       { path: "/hero/:id", element: <HeroPage /> },
+      { path: "/hero", element: <HeroListPage /> },
     ],
   },
 ]);
