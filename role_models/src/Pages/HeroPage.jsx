@@ -13,26 +13,26 @@ function HeroPage() {
 
     // Effects
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_API_URL}hero/${id}`)
+        fetch(`${import.meta.env.VITE_API_URL}hero/${id}/`)
         .then(results => {
             return results.json();
         })
         .then((data) => {
             setHero(data);
-        });
+        })
     }, []);
 
   return (
     <>
     <div>
+        <h2>Hero page</h2>
         <img src={hero.bio_pic} />
-        <h2>{hero.name}</h2>
-        <p>{hero.bio_text}</p>
-
+        <h2>Hero name: {hero.name}</h2>
+        <p>Hero bio: {hero.bio_text}</p>
     </div>    
-    <div>
+    {/* <div>
         <EditHeroForm />
-    </div>
+    </div> */}
     </>
   );
 }
