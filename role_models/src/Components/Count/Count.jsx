@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 //styling
-import './Count.css';
+import './Count.css'
 
 const Count = props => {
   // label of counter
@@ -36,9 +36,9 @@ const Count = props => {
   }, [number, duration]);
 
   return (
-    <div className="count">
+    <div>
       <h3>
-        <p>{count}{sign}</p>
+        <p className="count">{count}{sign}</p>
       </h3>
     </div>
   );
