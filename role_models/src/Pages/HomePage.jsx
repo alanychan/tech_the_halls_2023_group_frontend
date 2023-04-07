@@ -48,6 +48,7 @@ function HomePage() {
                 {loggedIn&&
                 <div className="home-hero-buttons">
                     <Link className="btn" to="/create-hero">Add a hero card</Link>
+                    <Link className="btn" to="/hero">See all cards</Link>
                 </div>}
             </div>
 
