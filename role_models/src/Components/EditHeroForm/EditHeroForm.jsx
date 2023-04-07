@@ -113,10 +113,10 @@ function EditHeroForm(props) {
           />
         </div>
         <button className="btn" type="submit">
-          Edit a hero card
+          Edit hero card
         </button>
       </form>
-      : (<p>Log in to edit a hero card</p>) }
+      : (<p>Log in to edit hero card</p>) }
       </>
     );
   }
