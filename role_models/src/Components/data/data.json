@@ -1,0 +1,29 @@
+{
+    "counts": [
+        {
+            "id": "001",
+            "label": "Computing jobs in the world held by women",
+            "number": "24",
+            "sign": "%",
+            "duration": "2"
+        }
+    ],
+    "counts2": [
+        {
+            "id": "002",
+            "label": "Represents the global increase of female software engineers in the past 21 years",
+            "number": "2",
+            "sign": "%",
+            "duration": "2"
+        }
+    ],
+    "counts3": [
+        {
+            "id": "003",
+            "label": "Represents the global increase of female software engineers in the past 21 years",
+            "number": "5560",
+            "sign": "",
+            "duration": "10"
+        }
+    ]
+}

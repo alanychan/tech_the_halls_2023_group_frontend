@@ -4,10 +4,13 @@ import { Link, useOutletContext } from "react-router-dom"
 // Styles
 import './HomePage.css';
 
+//data
+import data from "../Components/data/data.json";
 
 // Components
 import HeroCard from "../Components/HeroCard/HeroCard";
 import ProfileCard from "../Components/ProfileCard/ProfileCard";
+import Count from "../Components/Count/Count";
 
 function HomePage() {
     const [loggedIn] = useOutletContext();
@@ -55,17 +58,20 @@ function HomePage() {
             <div className="stats-section">
                 <div className="stats">
                     <h3>Did you know?</h3>
-                    <p className="stat-number">24%</p>
+                    <p className="stat-number"/>
+                        {data.counts.map(count => <Count key={count.id} data={count}/>)}
                     <p>Computing jobs in the world held by women</p>
                 </div>
                 <div className="stats">
                     <h3>The Slow Rise</h3>
-                    <p className="stat-number">2%</p>
+                    <p className="stat-number"/>
+                        {data.counts2.map(count => <Count key={count.id} data={count}/>)}
                     <p>Represents the global increase of female software engineers in the past 21 years</p>
                 </div>
                 <div className="stats">
                     <h3>Community Pillars</h3>
-                    <p className="stat-number">5,560</p>
+                    <p className="stat-number"/>
+                        {data.counts3.map(count => <Count key={count.id} data={count}/>)}
                     <p>women have been taught by SheCodes since its inception</p>
                 </div>
             </div>
