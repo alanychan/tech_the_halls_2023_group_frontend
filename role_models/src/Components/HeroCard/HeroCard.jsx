@@ -15,12 +15,12 @@ function HeroCard(props) {
             <div className="hero-details">
                 <h3>{heroData.name}</h3>
                 <p>{heroData.bio_text}</p>
-                {loggedIn?
+                {loggedIn&&
                 <div className="hero-buttons">
                     <Link className="btn" to="/edit-hero/:id">Edit</Link>
                     <Link className="btn" to="">Delete</Link>
                 </div>
-                : <p></p> }
+                }
             </div>
         </div >
     );
