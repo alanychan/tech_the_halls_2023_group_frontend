@@ -74,42 +74,33 @@ footer {
 }
 
 @media (max-width: 600px) {
-    /* footer {
-        display: flex;
-    } */
 
     .left-side {
-        display: inline-flexbox;
+        padding-top: 50px;
+        text-align: center;
         font-size: large;
     }
 
-    /* .right-side {
-        padding-right: 1px;
-        font-size: small;
-    } */
-
-    .left-side,.socials_containers {   
+    .left-side, .socials_containers {   
         flex-basis: 100%;
-        text-align: left;
     }
 
     .right-title {
-        /* font-size: small;
-        text-align: end; */
         display: none;
     }
 
     .socials_containers {
-        padding-top: 20px;
-        width: auto;
+        position: absolute;
+        margin-right: 60px;
     }
 
     #logo {
-        height: 50px;
+        height: 90px;
         border: 2px dashed white;
         padding: 2px;
         background: white;
         background-clip: border-box;
         border-radius: 5px;
     }
-} 
+
+}
