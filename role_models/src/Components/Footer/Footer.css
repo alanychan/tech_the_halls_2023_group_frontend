@@ -65,23 +65,32 @@ footer {
     /* margin-left: 2.5rem; */
     height: 80px;
     /* padding-left: 1rem; */
-    
+    border: 2px dashed white;
+    padding: 2px;
+    background: white;
+    background-clip: border-box;
+    border-radius: 5px;
     
 }
 
 @media (max-width: 600px) {
-    footer {
+    /* footer {
         display: flex;
-    }
+    } */
 
     .left-side {
-        padding-left: 1px;
-        font-size: small;
+        display: inline-flexbox;
+        font-size: large;
     }
 
-    .right-side {
+    /* .right-side {
         padding-right: 1px;
         font-size: small;
+    } */
+
+    .left-side,.socials_containers {   
+        flex-basis: 100%;
+        text-align: left;
     }
 
     .right-title {
@@ -91,9 +100,8 @@ footer {
     }
 
     .socials_containers {
-        padding-top: 80px;
-        display: flex;
-        flex-direction: column;
+        padding-top: 20px;
+        width: auto;
     }
 
     #logo {
@@ -102,6 +110,6 @@ footer {
         padding: 2px;
         background: white;
         background-clip: border-box;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 } 

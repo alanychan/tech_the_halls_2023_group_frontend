@@ -52,8 +52,6 @@ nav {
     font-weight: bold;
   }  */
 
- 
-
 
 /* .logoright {
     margin-right: 0px !important;
@@ -65,20 +63,20 @@ nav {
     padding: 100px;
 }
 
-/* @media (min-width: 500px) {
+
+@media (max-width: 600px) {
     nav {
         display: flex;
         justify-content: space-between;
     }
 
     #logo img {
-        height: 265px;
-        margin: 20px 50px;
+        height: 80px;
+        margin: -20px -7px;
+        padding: 10px;
     }
 
     #nav-controls {
         justify-content: space-evenly;
     }
-} */
-
-
+}
