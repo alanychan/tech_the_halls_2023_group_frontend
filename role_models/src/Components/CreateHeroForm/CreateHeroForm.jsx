@@ -8,9 +8,9 @@ function CreateHeroForm() {
     // State
     const [hero, setHero] = useState({
       "name": "",
-      "bio-text": "",
-      "bio-pic": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "bio-url": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "bio_text": "",
+      "bio_pic": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "bio_url": "https://images.pexels.com/photos/7985583/pexels-photo-7985583.jpeg?auto=compress&cs=tinysrgb&w=600",
       "featured": true,
       "date_created": new Date(),
     });
@@ -76,28 +76,28 @@ function CreateHeroForm() {
           />
         </div>
         <div>
-          <label htmlFor="bio-text">Short tagline (max 200 characters):</label>
+          <label htmlFor="bio_text">Short tagline (max 200 characters):</label>
           <input
             type="text"
-            id="bio-text"
+            id="bio_text"
             onChange={handleChange}
             placeholder="Describe their achievements"
           />
         </div>
         <div>
-        <label htmlFor="bio-pic">Profile image:</label>
+        <label htmlFor="bio_pic">Profile image:</label>
           <input
             type="url"
-            id="bio-pic"
+            id="bio_pic"
             onChange={handleChange}
             placeholder="Enter an image URL"
           />
         </div>
         <div>
-        <label htmlFor="bio-link">Biography:</label>
+        <label htmlFor="bio_url">Biography:</label>
           <input
             type="url"
-            id="bio-link"
+            id="bio_url"
             onChange={handleChange}
             placeholder="Enter a link to their biography"
           />
