@@ -60,6 +60,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     { label: "Custom", value: "Custom"}
   ], []);
 
+  const [checked, setChecked] = useState(false);
    
   console.log('initial state userData:', userData)
   console.log('initial state user:', user)
@@ -71,6 +72,8 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     console.log(">handleChange>", user);
     
     const { id, value } = event.target;
+    
+    setChecked(!checked);
 
     setUser((prevUser) => ({
         ...prevUser,
@@ -132,8 +135,15 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+        
     try {
+
+      if (!checked) {
+        setError(`Error: Please check acknowledgment`);
+        // window.alert("Please check acknowledgment.")
+      };
+
+
       if (stateCreateProfile) {        
         await postData();
       } else {
@@ -151,7 +161,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
   return (
     <>
     <div className="form-container">
-      <form onSubmit={handleSubmit}>      
+      <form onSubmit={handleSubmit}>
         <div>
           <p className="error">{error && error}</p>
           <p>* Indicates required</p>
@@ -221,6 +231,21 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
               value={user.password ?? userData?.password}
           />
         </div>
+        {stateCreateProfile &&
+        <div>
+          <label htmlFor="acknowledgment">
+            "I confirm that I have read and understood the criteria for joining the tech diversity community as a featured tech trailblazer."
+          </label>
+          {error}
+          <input 
+            id="acknowledgment"
+            type="checkbox"s
+            defaultChecked={checked}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        }
         {!stateCreateProfile &&
         <>
           <div>
@@ -230,7 +255,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                     options={selectPronouns} 
                     onChange={(selected) => handleDropdownChange(selected, "pronouns")}
                     value={user.pronouns ?? userData?.pronouns}
-                    // placeholder={user.pronouns ?? userData?.pronouns}
+                    placeholder={user.pronouns ?? userData?.pronouns}
                 />
           </div>
 
