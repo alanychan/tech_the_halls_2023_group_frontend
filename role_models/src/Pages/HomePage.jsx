@@ -74,7 +74,7 @@ function HomePage() {
                     <div className="stat-number">
                         {data.counts3.map(count => <Count key={count.id} data={count}/>)}
                     </div>
-                    <p>Women have been taught by SheCodes since its inception</p>
+                    <p>Women have been taught by She Codes since its inception</p>
                 </div>
             </div>
             <div id="p1" className="profiles-shuffle-board">
