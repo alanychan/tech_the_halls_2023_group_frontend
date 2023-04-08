@@ -4,7 +4,7 @@
     box-shadow: var(--box-shadow);
     border-radius: 5px;
     margin: 10px;
-    width: 300px;
+    width: 280px;
     transition: 0.5s;
 }
 
@@ -25,11 +25,12 @@
 
 .project-card img {
     width: 250px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
 }
 
 .project-card p {
-    margin: 20px 10px;
+    margin: 5px 10px;
 }
 
