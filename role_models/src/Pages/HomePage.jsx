@@ -1,27 +1,36 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
+import Carousel from "../Components/Carousel/Carousel.jsx";
 
 // Styles
 import './HomePage.css';
+import '../Components/Count/Count.css';
 
+//data
+import data from "../Components/data/data.json";
 
 // Components
 import HeroCard from "../Components/HeroCard/HeroCard";
 import ProfileCard from "../Components/ProfileCard/ProfileCard";
+import Count from "../Components/Count/Count.jsx";
 
 function HomePage() {
+    const [loggedIn] = useOutletContext();
+
     //state
     const [heroList, setHeroList] = useState([]);
-    // const [profileList, setProfileList] = useState([]);
+    const [usersList, setUsersList] = useState([]);
 
     // Effects
     useEffect(() => {
-    //     fetch(`${import.meta.env.VITE_API_URL}profile`)
-    //         .then((results) => {
-    //             return results.json();
-    //         })
-    //         .then((data) => {
-    //             setProfileList(data);
+
+    fetch(`${import.meta.env.VITE_API_URL}users`)
+        .then((results) => {
+            return results.json();
+        })
+        .then((data) => {
+            setUsersList(data);
+    }, []);
 
     fetch(`${import.meta.env.VITE_API_URL}hero`)
             .then((results) => {
@@ -38,37 +47,45 @@ function HomePage() {
             <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
                 <h2>Tech trailblazers</h2>
-                {/* <HeroCard /> */}
+                <Carousel>
                 {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
+                </Carousel>
+                {loggedIn&&
+                <div className="home-hero-buttons">
+                    <Link className="btn" to="/create-hero">Add a hero card</Link>
+                    <Link className="btn" to="/hero">See all cards</Link>
+                </div>}
             </div>
 
             <div className="stats-section">
                 <div className="stats">
                     <h3>Did you know?</h3>
-                    <p className="stat-number">24%</p>
+                    <p className="stat-number"/>
+                        {data.counts.map(count => <Count key={count.id} data={count}/>)}
                     <p>Computing jobs in the world held by women</p>
                 </div>
                 <div className="stats">
                     <h3>The Slow Rise</h3>
-                    <p className="stat-number">2%</p>
+                    <p className="stat-number"/>
+                        {data.counts2.map(count => <Count key={count.id} data={count}/>)}
                     <p>Represents the global increase of female software engineers in the past 21 years</p>
                 </div>
                 <div className="stats">
                     <h3>Community Pillars</h3>
-                    <p className="stat-number">5,560</p>
-                    <p>women have been taught by SheCodes since its inception</p>
+                    <div className="stat-number">
+                        {data.counts3.map(count => <Count key={count.id} data={count}/>)}
+                    </div>
+                    <p>Women have been taught by She Codes since its inception</p>
                 </div>
             </div>
             <div id="p1" className="profiles-shuffle-board">
                 <h2>Today's tech trailblazers</h2>
                 <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
-                <ProfileCard />
-                <ProfileCard />
-                {/* {profileList.map((profile, key) => {
-                        return <ProfileCard key={key} profileData={profile} />;
-                    })} */}
+                {usersList.map((users, key) => {
+                        return <ProfileCard key={key} usersData={users} />;
+                    })}
             </div>
             <div className="redirect">
                 <h2>Get started in your tech career!</h2>
@@ -76,7 +93,7 @@ function HomePage() {
             </div>
         </div >
     );
-}
+};
 
 export default HomePage;
 

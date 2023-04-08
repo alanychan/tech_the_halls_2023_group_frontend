@@ -175,3 +175,14 @@ label {
     font-stretch: expanded;
     font-family: var(--text-font);
 }
+
+@media (max-width: 600px) {
+    p {
+        text-align: center;
+        padding: 19px;
+    }
+
+    .brandname-tech {
+        text-align: center;
+    }
+}
