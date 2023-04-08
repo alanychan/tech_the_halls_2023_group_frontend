@@ -1,6 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 import Dropdown from "react-dropdown-select";
+//Component
+// import QuestionsAnswersForm from "./QuestionsAnswersForm";
 
 function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile }) {
 
@@ -13,22 +15,22 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     email: userData?.email || "",
     password: userData?.password || null,
     
-    blog: userData?.blog || "",
-    city: userData?.city || "",
-    country: userData?.country || "",
+    blog: userData?.blog || null,
+    city: userData?.city || null,
+    country: userData?.country || null,
     featured: userData?.featured || false,
     is_active: userData?.is_active || false,
     is_published: userData?.is_published || false,
-    job_title: userData?.job_title || "",
-    linkedin: userData?.linkedin || "",
-    profile_pic: userData?.profile_pic || "",
-    pronouns: userData?.pronouns || "",
-    tagline: userData?.tagline || "",
-    twitter: userData?.twitter || "",
-    video: userData?.video || "",
+    job_title: userData?.job_title || null,
+    linkedin: userData?.linkedin || null,
+    profile_pic: userData?.profile_pic || null,
+    pronouns: userData?.pronouns || null,
+    tagline: userData?.tagline || null,
+    twitter: userData?.twitter || null,
+    video: userData?.video || null,
 
-    //categories: userData?.categories || "",
-    // user_answers: userData?.user_answers || ""
+    categories:[],
+    user_answers: []
   });
 
   useEffect(() => {
@@ -321,7 +323,23 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                   value={user.video ?? userData?.video}
               />
           </div>
-
+          {/* <div><QuestionsAnswersForm/></div> */}
+          <div>
+            {user.user_answers.map((user_answers, key)=>{
+              return (
+                  <li key={key}>
+                  <label htmlFor="answers">{user_answers.question}</label>
+                  <textarea
+                      id="answers"
+                      // onChange={handleChange}
+                      rows={5}
+                      cols={48}
+                      value={user_answers?.answer}
+                  />
+                  </li>
+                );
+            })}
+          </div>
         <button type="submit" className="btn">
             {!stateCreateProfile ? 'Update' : 'Create'} Profile!
         </button>
