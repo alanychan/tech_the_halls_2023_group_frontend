@@ -6,6 +6,7 @@ import website from '../../assets/Images/Website_logo.png';
 import slack from '../../assets/Images/Slack_logo.png';
 
 import './Footer.css'
+import techdiversity from '../../assets/Images/TechDiversity_logo.png';
 
 function Footer() {
     const today = new Date();
@@ -15,9 +16,11 @@ function Footer() {
             <div className="left-side">
                 <div className="top-left">
                     <h3 className="left-title">
-                        Tech &#60;Div&#62;ersity
+                        {/* Tech &#60;Div&#62;ersity */}
+                        <Link to="/">
+                            <img id="logo" src={techdiversity}/>
+                        </Link>
                     </h3>
-
                     <p>Our definition of women includes transgender and cisgender, all those who experience or have experienced oppression as women, including non-binary and gender non-conforming people and all those who identify as women. </p>
                     <br></br>
                     <p>We acknowledge the traditional owners of the lands on which we live, work and learn and pay our respects to their elders past, present and emerging.</p>
