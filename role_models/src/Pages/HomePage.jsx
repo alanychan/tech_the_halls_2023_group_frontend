@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useOutletContext } from "react-router-dom"
 import Carousel from "../Components/Carousel/Carousel.jsx";
 
 // Styles
 import './HomePage.css';
+import '../Components/Count/Count.css';
 
+//data
+import data from "../Components/data/data.json";
 
 // Components
 import HeroCard from "../Components/HeroCard/HeroCard";
 import ProfileCard from "../Components/ProfileCard/ProfileCard";
+import Count from "../Components/Count/Count.jsx";
 
 function HomePage() {
+    const [loggedIn] = useOutletContext();
+
     //state
     const [heroList, setHeroList] = useState([]);
     const [usersList, setUsersList] = useState([]);
@@ -46,23 +52,32 @@ function HomePage() {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
                 </Carousel>
+                {loggedIn&&
+                <div className="home-hero-buttons">
+                    <Link className="btn" to="/create-hero">Add a hero card</Link>
+                    <Link className="btn" to="/hero">See all cards</Link>
+                </div>}
             </div>
 
             <div className="stats-section">
                 <div className="stats">
                     <h3>Did you know?</h3>
-                    <p className="stat-number">24%</p>
+                    <p className="stat-number"/>
+                        {data.counts.map(count => <Count key={count.id} data={count}/>)}
                     <p>Computing jobs in the world held by women</p>
                 </div>
                 <div className="stats">
                     <h3>The Slow Rise</h3>
-                    <p className="stat-number">2%</p>
+                    <p className="stat-number"/>
+                        {data.counts2.map(count => <Count key={count.id} data={count}/>)}
                     <p>Represents the global increase of female software engineers in the past 21 years</p>
                 </div>
                 <div className="stats">
                     <h3>Community Pillars</h3>
-                    <p className="stat-number">5,560</p>
-                    <p>women have been taught by SheCodes since its inception</p>
+                    <div className="stat-number">
+                        {data.counts3.map(count => <Count key={count.id} data={count}/>)}
+                    </div>
+                    <p>Women have been taught by She Codes since its inception</p>
                 </div>
             </div>
             <div id="p1" className="profiles-shuffle-board">

@@ -6,7 +6,6 @@
     margin: 10px;
     display: flex;
     min-width: 600px;
-    max-height: 500px;
 }
 
 .hero-card img {
@@ -30,4 +29,12 @@
     margin: 0;
     padding: 0;
     padding-left: 10px;
+}
+
+.hero-buttons {
+    display: flex;
+}
+
+.hero-buttons a {
+    margin: 10px;
 }
