@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate, useParams, useOutletContext } from "react-router-dom";
 
+
 import "./HeroCard.css";
 
 function HeroCard(props) {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link, useOutletContext } from "react-router-dom"
+import Carousel from "../Components/Carousel/Carousel.jsx";
 
 // Styles
 import './HomePage.css';
@@ -46,9 +47,11 @@ function HomePage() {
             <h3 className="tagline">Breaking Industry Barriers</h3>
             <div className="hero-section">
                 <h2>Tech trailblazers</h2>
+                <Carousel>
                 {heroList.map((hero, key) => {
                     return <HeroCard key={key} heroData={hero} />;
                 })}
+                </Carousel>
                 {loggedIn&&
                 <div className="home-hero-buttons">
                     <Link className="btn" to="/create-hero">Add a hero card</Link>
