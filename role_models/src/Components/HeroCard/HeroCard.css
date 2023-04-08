@@ -11,6 +11,7 @@
 
 .hero-card img {
     width: 250px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
 }
@@ -19,12 +20,14 @@
     margin: 20px 10px;
 }
 
-.hero-card a {
-    color: var(--purple);
-}
-
 .hero-details {
     width: 300px;
     display: flex;
     flex-direction: column;
+}
+
+.hero-details h3 {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
 }
