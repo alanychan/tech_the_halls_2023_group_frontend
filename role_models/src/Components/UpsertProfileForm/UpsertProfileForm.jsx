@@ -221,7 +221,8 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
               value={user.password ?? userData?.password}
           />
         </div>
-        
+        {!stateCreateProfile &&
+        <>
           <div>
               <label htmlFor="pronouns">Pronouns</label>
               <Dropdown 
@@ -340,6 +341,8 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                 );
             })}
           </div>
+          </>
+        }  
         <button type="submit" className="btn">
             {!stateCreateProfile ? 'Update' : 'Create'} Profile!
         </button>
