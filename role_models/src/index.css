@@ -179,10 +179,19 @@ label {
 @media (max-width: 600px) {
     p {
         text-align: center;
-        padding: 19px;
+        padding: 24px;
     }
 
     .brandname-tech {
         text-align: center;
+    }
+
+    h3 {
+        padding: 20px;
+
+    }
+
+    h2 {
+        padding: 90px;
     }
 }
