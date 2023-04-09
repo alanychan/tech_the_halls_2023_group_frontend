@@ -1,0 +1,28 @@
+/* 
+* {
+    border: 1px solid grey;
+} */
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-hero-page {
+    display: flex;
+    width: 60%;
+}
+
+.edit-hero-page img {
+    width: 250px;
+    border-radius: 5px;
+}
+
+.edit-hero-page p, .edit-hero-page a {
+    margin: 20px;
+}
+
+.edit-hero-page h3 {
+    margin: 10px;
+}
