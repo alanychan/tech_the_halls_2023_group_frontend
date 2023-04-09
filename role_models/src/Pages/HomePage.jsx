@@ -24,15 +24,15 @@ function HomePage() {
     // Effects
     useEffect(() => {
 
-    fetch(`${import.meta.env.VITE_API_URL}users`)
-        .then((results) => {
-            return results.json();
-        })
-        .then((data) => {
-            setUsersList(data);
-    }, []);
+        fetch(`${import.meta.env.VITE_API_URL}users`)
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setUsersList(data);
+            }, []);
 
-    fetch(`${import.meta.env.VITE_API_URL}hero`)
+        fetch(`${import.meta.env.VITE_API_URL}hero`)
             .then((results) => {
                 return results.json();
             })
@@ -40,6 +40,8 @@ function HomePage() {
                 setHeroList(data);
             });
     }, []);
+
+    console.log(usersList);
 
     return (
         <div className="page-container">
