@@ -101,15 +101,6 @@ function ProfilePage(props) {
                     <div className="profile-socials-section">
                         <h2>Get in touch!</h2>
                         <ul>
-                            {profile.email &&
-                                <li>
-                                    <h3 className="social-header">Email </h3>
-                                    <span>
-                                        <a href={sendProfileEmail}>Email {profile.first_name}
-                                        </a>
-                                    </span>
-                                </li>
-                            }
                             {profile.blog &&
                                 <li>
                                     <h3 className="social-header">Blog </h3>
