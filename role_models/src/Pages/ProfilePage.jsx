@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useOutletContext } from "react-router-dom";
+import { Link, useParams, useOutletContext } from "react-router-dom";
 
 // Styles
 import './HomePage.css';
@@ -11,11 +11,13 @@ function ProfilePage(props) {
     // Set state
     const [profile, setProfile] = useState({});
     // const [questionList, setQuestionList] = useState([]);
-    const [userAnswers, setUserAnswers] = useState({ user_answers: [] });
+    // const [userAnswers, setUserAnswers] = useState({ user_answers: [] });
     const [loggedIn] = useOutletContext();
 
     // Hooks
     const { id } = useParams();
+    const deleteLink = `/delete-profile/${profile.id}`;
+    const editLink = `/edit-profile/${id}`;
 
 
     //Effects
@@ -28,25 +30,31 @@ function ProfilePage(props) {
                 setProfile(data);
             });
 
-        fetch(`${import.meta.env.VITE_API_URL
-            }users-answers`).then((results) => {
-                return results.json();
-            })
-            .then((data) => {
-                setUserAnswers(data);
-            });
+        // fetch(`${import.meta.env.VITE_API_URL
+        //     }users-answers`).then((results) => {
+        //         return results.json();
+        //     })
+        //     .then((data) => {
+        //         setUserAnswers(data);
+        //     });
     }, []);
 
     const profilePic = profile.profile_pic;
     const video = profile.video;
-    console.log(profile)
+    // const answers = profile.answers;
+    const answers = profile.user_answers;
+    // console.log(answers[0].answer);
 
     return (
         <div className="page-container">
             {loggedIn &&
                 <div id="edit-delete-container">
-                    <a className="profile-nav-btns">Edit</a>
-                    <a className="profile-nav-btns">Delete</a>
+                    <Link to={editLink} className="profile-nav-btns">
+                        Edit
+                    </Link>
+                    <Link to={deleteLink} className="profile-nav-btns">
+                        Delete
+                    </Link>
                 </div>
             }
             <div className="column-container">
@@ -57,12 +65,13 @@ function ProfilePage(props) {
                     <h3 className="profile-h3">{profile.job_title}</h3>
                     <h3 className="profile-h3 profile-tagline">{profile.tagline}</h3>
                     <br></br>
-                    <p className="profile-question"></p>
+                    <p className="profile-question">
+                    </p>
                 </div>
 
                 <div className="bottom-left">
                     {/* <ul>
-                        {userAnswers.map((answer, key) => {
+                        {profile.user_answers.map((answer, key) => {
                             return <li key={key} answer={answer}>test</li>;
                         })}
                     </ul> */}
