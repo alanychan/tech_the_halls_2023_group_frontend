@@ -36,7 +36,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
   const [questions, setQuestions] = useState([]);
   const [userAnswers, setUserAnswers] = useState([]);
 
-  const [categories, setCategories] = useState([]);
+  const [category, setCategory] = useState([]);
 
   // Hooks
   const { id } = useParams();
@@ -415,21 +415,25 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                 }
               </div>
               <div>
-              {category.map((categories, key) => {
+              {category.map((category, key) => {
                   return (
                     <li key={key}>
-                      <label htmlFor="category">{category.category}</label>
+                      <label htmlFor="category">{category.category_name}</label>
                       <textarea
                         id="category"
                         // onChange={handleChange}
                         rows={5}
                         cols={48}
-                        value={category.map(category_object) => {
-                          return category.category
-                        }
-                      })}
+                        value={category.map(category_object => {
+                          if (category.category_name == category_object.category) {
+                            return category_object.answer
+                          }
+                        })}
                       />
                     </li>
+                  )
+                })
+                }
               </div>
             </>
           }
