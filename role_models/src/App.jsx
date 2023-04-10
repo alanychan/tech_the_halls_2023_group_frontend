@@ -12,6 +12,7 @@ import DeleteProfilePage from "./Pages/DeleteProfilePage";
 import CreateHeroPage from "./Pages/CreateHeroPage";
 import HeroPage from "./Pages/HeroPage";
 import HeroListPage from "./Pages/HeroListPage";
+import AdminPage from "./Pages/AdminPage";
 
 // Components
 import Nav from "./Components/Nav/Nav";
@@ -45,6 +46,7 @@ const router = createBrowserRouter([
       { path: "/create-hero", element: <CreateHeroPage /> },
       { path: "/hero/:id", element: <HeroPage /> },
       { path: "/hero", element: <HeroListPage /> },
+      { path: "/admin", element: <AdminPage /> },
     ],
   },
 ]);
