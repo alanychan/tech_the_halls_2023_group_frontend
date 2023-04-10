@@ -24,15 +24,15 @@ function HomePage() {
     // Effects
     useEffect(() => {
 
-    fetch(`${import.meta.env.VITE_API_URL}users`)
-        .then((results) => {
-            return results.json();
-        })
-        .then((data) => {
-            setUsersList(data);
-    }, []);
+        fetch(`${import.meta.env.VITE_API_URL}users`)
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setUsersList(data);
+            }, []);
 
-    fetch(`${import.meta.env.VITE_API_URL}hero`)
+        fetch(`${import.meta.env.VITE_API_URL}hero`)
             .then((results) => {
                 return results.json();
             })
@@ -40,6 +40,8 @@ function HomePage() {
                 setHeroList(data);
             });
     }, []);
+
+    console.log(usersList);
 
     return (
         <div className="page-container">
@@ -84,6 +86,7 @@ function HomePage() {
                 <h2>Today's tech trailblazers</h2>
                 <p className="trailblazer-text">Inspire the next generation of tech trailblazers, <Link to="create-profile">create an account</Link>!</p>
                 {usersList.map((users, key) => {
+                    if(users.is_published)
                         return <ProfileCard key={key} usersData={users} />;
                     })}
             </div>
@@ -91,7 +94,7 @@ function HomePage() {
                 <h2>Get started in your tech career!</h2>
                 <Link className="btn" to="https://shecodes.com.au/">Visit the She Codes website</Link>
             </div>
-        </div >
+        </div>
     );
 };
 

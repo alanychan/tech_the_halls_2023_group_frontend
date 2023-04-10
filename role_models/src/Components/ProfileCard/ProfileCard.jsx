@@ -6,10 +6,12 @@ function ProfileCard(props) {
 
     const { usersData } = props;
 
+    const profileLink = `/profile/${usersData.id}`;
+
     return (
         <>
         <div className="project-card">
-            <Link to="/profile/:id">
+            <Link to={profileLink}>
             <img src={usersData.profile_pic} alt="Photo of tech trailblazer"/>
                 <h3>{usersData.first_name} {usersData.last_name}</h3>
                 <p>{usersData.tagline}</p>
