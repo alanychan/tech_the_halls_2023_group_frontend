@@ -73,7 +73,9 @@ li {
     border-radius: 5px;
 }
 
-
+form li {
+    list-style-type: none;
+}
 
 .brandname-tech {
     font-weight: 800;
