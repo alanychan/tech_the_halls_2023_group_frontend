@@ -73,6 +73,10 @@ li {
     border-radius: 5px;
 }
 
+form li {
+    list-style-type: none;
+}
+
 .brandname-tech {
     font-weight: 800;
     font-family: var(--text-font);
@@ -129,15 +133,6 @@ li {
     /*     max-width: 80%; */
 }
 
-.column-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 80%;
-    margin: 50px auto 120px;
-    gap: 45px 40px;
-    text-align: left;
-}
-
 /* ---------------------- Form Styling---------------------- */
 .form-container {
     display: flex;
@@ -179,10 +174,19 @@ label {
 @media (max-width: 600px) {
     p {
         text-align: center;
-        padding: 19px;
+        padding: 24px;
     }
 
     .brandname-tech {
         text-align: center;
+    }
+
+    h3 {
+        padding: 20px;
+
+    }
+
+    h2 {
+        padding: 90px;
     }
 }
