@@ -22,6 +22,8 @@ function DeleteProfilePage() {
         //     // console.log(data);
         //     setProfile(data); 
         // });
+        window.localStorage.removeItem("token")
+        setLoggedIn(false)
         navigate("/");
     });
 
