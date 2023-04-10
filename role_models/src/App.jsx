@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       { path: "/edit-profile/:id", element: <EditProfilePage /> },
       { path: "/signout", element: <HomePage /> },
       { path: "/create-hero", element: <CreateHeroPage /> },
-      { path: "/hero/:id", element: <HeroPage /> },
+      { path: "/hero/:id/", element: <HeroPage /> },
       { path: "/hero", element: <HeroListPage /> },
     ],
   },

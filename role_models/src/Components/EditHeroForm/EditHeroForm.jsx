@@ -18,7 +18,7 @@ function EditHeroForm(props) {
         // fetch is an asynchronis function
         // using 'await' stops the code and makes it wait for the function to finish, it's typically used instead of 
         // useEffect as an async code
-        fetch(`${import.meta.env.VITE_API_URL}hero/${id}`)
+        fetch(`${import.meta.env.VITE_API_URL}hero/${id}/`)
         .then(results => {
           return results.json();
         })
@@ -48,7 +48,7 @@ function EditHeroForm(props) {
         if (loggedIn) {
           try {
             const response = await fetch(
-              `${import.meta.env.VITE_API_URL}hero/${id}`,
+              `${import.meta.env.VITE_API_URL}hero/${id}/`,
               {
                 method: "put",
                 headers: {
