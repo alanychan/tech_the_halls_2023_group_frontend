@@ -13,7 +13,7 @@ function DeleteProfilePage() {
     // const navigate = useNavigate();
 
     // alert(id)
-    const deleteProfile = (id) => {
+    const deleteProfile = () => {
         fetch(`${import.meta.env.VITE_API_URL}users/${id}`,
             { method: 'DELETE' }).then((results) => {
                 return results.json();
@@ -36,7 +36,7 @@ function DeleteProfilePage() {
                     <p>Are you sure you wish to permanently delete your profile and the associated account?</p>
                     <div className="option-btns">
                         {/* button below needs onClick added after delete code done */}
-                        <button className="btn delete-btn" onClick={deleteProfile}>Yes</button>
+                        <button className="btn delete-btn" onClick={() => deleteProfile(id)}>Yes</button>
                         <Link to={profileLink} className="btn cancel-btn">Cancel</Link>
                     </div>
                 </div> : <div className="delete-confirmation"> <h2>This account no longer exists.</h2> <h3 className="h3-delete-confirmation"><span><a href="/">Click here</a></span> to return to the homepage</h3></div>}
