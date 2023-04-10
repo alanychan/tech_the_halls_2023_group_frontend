@@ -33,12 +33,37 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     user_answers: []
   });
 
+  const [questions, setQuestions] = useState([]);
+  const [userAnswers, setUserAnswers] = useState([]);
+
+  // Hooks
+  const { id } = useParams();
+
   useEffect(() => {
     setUser(prevUser => ({
       ...prevUser,
       ...userData
     }));
   }, [userData]);
+
+  //Effects
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL
+      }users/${id}`).then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setUserAnswers(data.user_answers);
+      });
+
+    fetch(`${import.meta.env.VITE_API_URL
+      }questions/`).then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setQuestions(data);
+      });
+  }, []);
 
   const authToken = window.localStorage.getItem("token");
 
@@ -350,7 +375,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                 />
               </div>
               {/* <div><QuestionsAnswersForm/></div> */}
-              <div>
+              {/* <div>
                 {user.user_answers.map((user_answers, key) => {
                   return (
                     <li key={key}>
@@ -365,6 +390,27 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                     </li>
                   );
                 })}
+              </div> */}
+              <div>
+                {questions.map((question, key) => {
+                  return (
+                    <li key={key}>
+                      <label htmlFor="answers">{question.question}</label>
+                      <textarea
+                        id="answers"
+                        // onChange={handleChange}
+                        rows={5}
+                        cols={48}
+                        value={userAnswers.map(answer_object => {
+                          if (question.question == answer_object.question) {
+                            return answer_object.answer
+                          }
+                        })}
+                      />
+                    </li>
+                  )
+                })
+                }
               </div>
             </>
           }
