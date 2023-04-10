@@ -1,31 +1,29 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 
+import '../CreateHeroForm/CreateHeroForm.css';
+
 function EditHeroForm(props) {
     const authToken = window.localStorage.getItem("token");
     const [loggedIn] = useOutletContext();
-
-    // State
-    const {heroData} = props
-    const [hero, setHero] = useState();
            
     // Hooks
     const { id } = useParams();
     const navigate = useNavigate();
 
+    // State
+    const [hero, setHero] = useState([]);
+
     // Effects
-      useEffect(() => {
-        // fetch is an asynchronis function
-        // using 'await' stops the code and makes it wait for the function to finish, it's typically used instead of 
-        // useEffect as an async code
+    useEffect(() => {
         fetch(`${import.meta.env.VITE_API_URL}hero/${id}`)
         .then(results => {
-          return results.json();
+            return results.json();
         })
         .then((data) => {
-          setHero(data);
-        });
-      }, []);
+            setHero(data);
+        })
+    }, []);
 
 
     // Actions
@@ -82,16 +80,16 @@ function EditHeroForm(props) {
             type="text"
             id="name"
             onChange={handleChange}
-            // value={heroData.name}
+            value={hero.name}
           />
         </div>
         <div>
-          <label htmlFor="bio_text">Short tagline (max 200 characters):</label>
-          <input
-            type="text"
+          <label htmlFor="bio_text">Short tagline:</label>
+          <textarea
+            maxLength={130}
             id="bio_text"
             onChange={handleChange}
-            // value={heroData.bio_text}
+            value={hero.bio_text}
           />
         </div>
         <div>
@@ -100,7 +98,7 @@ function EditHeroForm(props) {
             type="url"
             id="bio_pic"
             onChange={handleChange}
-            // value={heroData.bio_pic}
+            value={hero.bio_pic}
           />
         </div>
         <div>
@@ -109,7 +107,16 @@ function EditHeroForm(props) {
             type="url"
             id="bio_url"
             onChange={handleChange}
-            // value={heroData.bio_url}
+            value={hero.bio_url}
+          />
+        </div>
+        <div>
+        <label htmlFor="featured">Is featured:</label>
+          <input
+            type="text"
+            id="featured"
+            onChange={handleChange}
+            value={hero.featured}
           />
         </div>
         <button className="btn" type="submit">

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
+import './CreateHeroForm.css';
+
 function CreateHeroForm() {
     const authToken = window.localStorage.getItem("token");
     const [loggedIn] = useOutletContext();
@@ -76,9 +78,9 @@ function CreateHeroForm() {
           />
         </div>
         <div>
-          <label htmlFor="bio_text">Short tagline (max 200 characters):</label>
-          <input
-            type="text"
+          <label htmlFor="bio_text">Short tagline:</label>
+          <textarea
+            maxLength={130}
             id="bio_text"
             onChange={handleChange}
             placeholder="Describe their achievements"
