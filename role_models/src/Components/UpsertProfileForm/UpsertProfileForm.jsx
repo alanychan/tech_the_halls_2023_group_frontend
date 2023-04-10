@@ -3,9 +3,9 @@ import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 import Dropdown from "react-dropdown-select";
 //Component
 // import QuestionsAnswersForm from "./QuestionsAnswersForm";
+import Alert from "../Alert/Alert";
 
 function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile }) {
-
 
   //State  
   const [user, setUser] = useState({
@@ -30,40 +30,54 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     video: userData?.video || null,
 
     categories: [],
-    user_answers: []
-  });
+    user_answers: [],
+    // user_answers: [{answer: userData.user_answers?.answer || null}]
+    });
 
-  const [questions, setQuestions] = useState([]);
-  const [userAnswers, setUserAnswers] = useState([]);
+    const [questions, setQuestions] = useState([]);
+    const [userAnswers, setUserAnswers] = useState([]);
 
   // Hooks
   const { id } = useParams();
-
+  
+  //Effects
   useEffect(() => {
+    
     setUser(prevUser => ({
       ...prevUser,
       ...userData
     }));
+
+    // setUserAnswers(prevUserAnswers => ({ 
+    //   ...prevUserAnswers,
+    //   ...userData.user_answers
+    // }));
+
   }, [userData]);
 
   //Effects
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL
-      }users/${id}`).then((results) => {
-        return results.json();
-      })
-      .then((data) => {
-        setUserAnswers(data.user_answers);
-      });
+    // fetch(`${import.meta.env.VITE_API_URL}users/${id}`)
+    //   .then((results) => {
+    //     return results.json();
+    //   })
+    //   .then((data) => {
+    //     setUserAnswers(data.user_answers);
+    //     // setUser((prevUser) => ({
+    //     //   ...prevUser,
+    //     //   user_answers: data.user_answers
+    //     // }));
+    //   });
 
-    fetch(`${import.meta.env.VITE_API_URL
-      }questions/`).then((results) => {
+    fetch(`${import.meta.env.VITE_API_URL}questions/`)
+      .then((results) => {
         return results.json();
       })
       .then((data) => {
         setQuestions(data);
       });
   }, []);
+
 
   const authToken = window.localStorage.getItem("token");
 
@@ -79,18 +93,22 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
     padding: '0 0 10px 10px',
   };
 
+  //Set values for pronouns in dropdown select
   const selectPronouns = useMemo(() => [
     { label: "She/Her", value: "She/Her" },
     { label: "They/Them", value: "They/Them" },
     { label: "Custom", value: "Custom" }
   ], []);
 
+  //Set State for acknowledgement criteria
   const [checked, setChecked] = useState(false);
 
   console.log('initial state userData:', userData)
   console.log('initial state user:', user)
   console.log("authToken:", authToken)
   console.log('stateCreateProfile:', stateCreateProfile)
+  // console.log("users_answers", userData.user_answers)
+  console.log("userAnswers", userAnswers)
 
 
   const handleChange = useCallback((event) => {
@@ -104,7 +122,9 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
       ...prevUser,
       [id]: value,
     }));
+
   }, []);
+
 
   const handleDropdownChange = useCallback((selected, id) => {
     setUser((prevUser) => ({
@@ -112,6 +132,25 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
       [id]: selected[0] ? selected[0]?.value : null
     }));
   }, []);
+
+  const handleAnswerChange = useCallback((event) => {
+    console.log("event", event)
+    const { id, value } = event.target;
+    
+    // setUserAnswers(prevUserAnswers => ({ 
+    //   ...prevUserAnswers,
+    //   ...userData.user_answers
+    // }));
+    console.log("questions.question", questions.question.key)
+
+    setUser((prevUser) => {
+      const newAnswer = {...prevUser}
+        newAnswer.user_answers[id] = value
+        return newAnswer
+       
+    });
+  }, []);
+
 
 
   const postData = async () => {
@@ -243,20 +282,22 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
               value={user.email ?? userData?.email}
             />
           </div>
-          <div>
-            <label htmlFor="password">Password *</label>
-            {/* display error message if password is missing */}
-            {!stateCreateProfile ? user.password === '' && <span style={errorStyle}>Please enter a password</span> : null}
-            <input
-              type="password"
-              id="password"
-              onChange={handleChange}
-              placeholder="Password"
-              required
-              value={user.password ?? userData?.password}
-            />
-          </div>
           {stateCreateProfile &&
+            <>
+            <div>
+              <label htmlFor="password">Password *</label>
+              {/* display error message if password is missing */}
+              {!stateCreateProfile ? user.password === '' && <span style={errorStyle}>Please enter a password</span> : null}
+              <input
+                type="password"
+                id="password"
+                onChange={handleChange}
+                placeholder="Password"
+                required
+                value={user.password ?? userData?.password}
+              />
+            </div>
+          
             <div>
               <label htmlFor="acknowledgment">
                 "I confirm that I have read and understood the criteria for joining the tech diversity community as a featured tech trailblazer."
@@ -270,6 +311,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                 required
               />
             </div>
+            </>
           }
           {!stateCreateProfile &&
             <>
@@ -391,7 +433,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                   );
                 })}
               </div> */}
-              <div>
+              {/* <div>
                 {questions.map((question, key) => {
                   return (
                     <li key={key}>
@@ -408,6 +450,34 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                         })}
                       />
                     </li>
+                  )
+                })
+                }
+              </div> */}
+              <div>
+                {questions.map((question, key) => {
+                  return (
+                    <>
+                    <li key={key}>
+                      <label htmlFor="answer">{question.question}</label>
+                      <textarea
+                        id="answer"
+                        onChange={handleAnswerChange}
+                        rows={5}
+                        cols={48}
+                        // value={user.user_answers.answer}
+                        value={
+                          (user.user_answers.map(answer_object => {
+                          if (question.question == answer_object.question) {
+                            return answer_object?.answer
+                          } else {
+                            return  userAnswers?.answer ?? null
+                          }
+                          })) 
+                        }
+                      />
+                    </li>
+                    </>
                   )
                 })
                 }

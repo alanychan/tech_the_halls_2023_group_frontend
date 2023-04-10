@@ -15,14 +15,14 @@ function EditProfilePage() {
         try {
           const res = await fetch(
             `${import.meta.env.VITE_API_URL}users/${id}`
-        );
-        const data = await res.json();
-        setUser(data);
+          );
+          const data = await res.json();
+          setUser(data);
         } catch (err) {
             console.log(err);
         }
-        };
-        fetchUser();
+      };
+      fetchUser();
     }, []);
 
   return (
