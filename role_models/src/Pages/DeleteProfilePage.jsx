@@ -24,7 +24,7 @@ function DeleteProfilePage() {
         // });
         window.localStorage.removeItem("token")
         setLoggedIn(false)
-        navigate("/");
+        // navigate("/");
     });
 
     return (
