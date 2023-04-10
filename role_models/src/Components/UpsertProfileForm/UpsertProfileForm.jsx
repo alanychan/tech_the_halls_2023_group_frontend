@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate, useParams, useOutletContext } from "react-router-dom";
 import Dropdown from "react-dropdown-select";
 //Component
-// import QuestionsAnswersForm from "./QuestionsAnswersForm";
+import QuestionsAnswersForm from "./QuestionsAnswersForm";
 
 import Alert from "../Alert/Alert";
 
@@ -37,7 +37,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
   });
 
   const [questions, setQuestions] = useState([]);
-  const [userAnswers, setUserAnswers] = useState([]);
+  // const [userAnswers, setUserAnswers] = useState([]);
 
   const [category, setCategory] = useState([]);
 
@@ -411,7 +411,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                   value={user.video ?? userData?.video}
                 />
               </div>
-              {/* <div><QuestionsAnswersForm/></div> */}
+              <div><QuestionsAnswersForm user_answers={userData.user_answers} user_id={user.id}/></div>
               <div>
                 {/* {questions.map((question, key) => {
                   return (
@@ -432,7 +432,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                   )
                 })
                 } */}
-                {questions.map((question, key) => {
+                {/* {questions.map((question, key) => {
                   return (
                     <>
                     <li key={key}>
@@ -457,7 +457,7 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                     </>
                   )
                 })
-                }
+                } */}
               </div>
               <div>
                 {category.map((category, key) => {
