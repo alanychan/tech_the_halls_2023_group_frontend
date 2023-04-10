@@ -5,13 +5,17 @@
 
 .hero-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    /* border: 1px solid red; */
 }
 
 .edit-hero-page {
     display: flex;
     width: 60%;
+    padding: 20px;
+    /* border: 1px solid blue; */
 }
 
 .edit-hero-page img {
@@ -30,6 +34,19 @@
     margin: 10px;
 }
 
+.edit-hero-form {
+    /* border: 1px solid grey; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
 .edit-hero-form h3 {
     text-align: center;
+}
+
+.edit-hero-form form {
+    margin: 10px;
+    width: 100%;
 }
