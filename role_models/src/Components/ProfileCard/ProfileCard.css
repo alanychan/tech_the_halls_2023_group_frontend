@@ -9,7 +9,7 @@
 }
 
 .project-card h3 {
-    /* color: var(--purple); */
+    color: var(--purple);
     font-weight: 500;
 }
 
@@ -32,6 +32,7 @@
 .project-card:hover {
     /* opacity: 1 !important; */
     background-color: #8346ae4a;
+    /* color: var(--darkcolor); */
 }
 
 .project-card img {
