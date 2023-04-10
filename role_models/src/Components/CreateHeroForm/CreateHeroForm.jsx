@@ -80,7 +80,7 @@ function CreateHeroForm() {
         <div>
           <label htmlFor="bio_text">Short tagline:</label>
           <textarea
-            maxLength={150}
+            maxLength={200}
             id="bio_text"
             onChange={handleChange}
             placeholder="Describe their achievements"
