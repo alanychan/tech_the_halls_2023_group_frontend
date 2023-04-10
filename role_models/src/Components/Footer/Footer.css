@@ -60,3 +60,47 @@ footer {
 
 
 }
+
+#logo{
+    /* margin-left: 2.5rem; */
+    height: 80px;
+    /* padding-left: 1rem; */
+    border: 2px dashed white;
+    padding: 2px;
+    background: white;
+    background-clip: border-box;
+    border-radius: 5px;
+    
+}
+
+@media (max-width: 600px) {
+
+    .left-side {
+        padding-top: 50px;
+        text-align: center;
+        font-size: large;
+    }
+
+    .left-side, .socials_containers {   
+        flex-basis: 100%;
+    }
+
+    .right-title {
+        display: none;
+    }
+
+    .socials_containers {
+        position: absolute;
+        margin-right: 60px;
+    }
+
+    #logo {
+        height: 90px;
+        border: 2px dashed white;
+        padding: 2px;
+        background: white;
+        background-clip: border-box;
+        border-radius: 5px;
+    }
+
+}

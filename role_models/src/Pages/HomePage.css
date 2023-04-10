@@ -15,6 +15,23 @@
     margin: 0;
 }
 
+.home-hero-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.home-hero-buttons a {
+    margin: 10px;
+}
+
+.list-hero-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px;
+}
+
 .trailblazer-text {
     width: 100%;
     padding: 20px;

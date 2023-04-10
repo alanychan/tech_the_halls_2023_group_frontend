@@ -8,6 +8,10 @@ import LogInPage from "./Pages/LoginPage";
 import ProfilePage from "./Pages/ProfilePage";
 import CreateProfilePage from "./Pages/CreateProfilePage";
 import EditProfilePage from "./Pages/EditProfilePage";
+import DeleteProfilePage from "./Pages/DeleteProfilePage";
+import CreateHeroPage from "./Pages/CreateHeroPage";
+import HeroPage from "./Pages/HeroPage";
+import HeroListPage from "./Pages/HeroListPage";
 
 // Components
 import Nav from "./Components/Nav/Nav";
@@ -34,9 +38,13 @@ const router = createBrowserRouter([
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LogInPage /> },
       { path: "/profile/:id", element: <ProfilePage /> },
+      { path: "/delete-profile/:id", element: <DeleteProfilePage /> },
       { path: "/create-profile", element: <CreateProfilePage /> },
       { path: "/edit-profile/:id", element: <EditProfilePage /> },
       { path: "/signout", element: <HomePage /> },
+      { path: "/create-hero", element: <CreateHeroPage /> },
+      { path: "/hero/:id", element: <HeroPage /> },
+      { path: "/hero", element: <HeroListPage /> },
     ],
   },
 ]);
