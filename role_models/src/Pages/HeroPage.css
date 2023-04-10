@@ -15,8 +15,11 @@
 }
 
 .edit-hero-page img {
-    width: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .edit-hero-page p, .edit-hero-page a {
@@ -25,4 +28,8 @@
 
 .edit-hero-page h3 {
     margin: 10px;
+}
+
+.edit-hero-form h3 {
+    text-align: center;
 }
