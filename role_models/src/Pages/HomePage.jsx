@@ -41,8 +41,6 @@ function HomePage() {
             });
     }, []);
 
-    console.log(usersList);
-
     return (
         <div className="page-container">
             <h1 className="brandname-tech">tech <span className="brandname-div">&#60;Div&#62;</span><span className="brandname-ersity">ersity</span></h1>
@@ -51,8 +49,10 @@ function HomePage() {
                 <h2>Tech trailblazers</h2>
                 <Carousel>
                 {heroList.map((hero, key) => {
-                    return <HeroCard key={key} heroData={hero} />;
+                    if(hero.featured)
+                        return <HeroCard key={key} heroData={hero} />;
                 })}
+
                 </Carousel>
                 {loggedIn&&
                 <div className="home-hero-buttons">

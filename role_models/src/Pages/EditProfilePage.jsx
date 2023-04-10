@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import CreateProfileForm from "../Components/CreateProfileForm/CreateProfileForm";
+import CreateProfileForm from "../Components/CreateProfileForm/CreateProfileForm";
 import UpsertProfileForm from "../Components/UpsertProfileForm/UpsertProfileForm";
 
 function EditProfilePage() {
