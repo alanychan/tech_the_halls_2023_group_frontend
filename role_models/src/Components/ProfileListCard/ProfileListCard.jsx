@@ -11,7 +11,7 @@ function ProfileListCard(props) {
 
     return (
         <>
-            <div className="project-card">
+            <div className="profile-card">
                 <div className="img-info">
                     <div className="img-container">
                         <img src={usersData.profile_pic} alt="Photo of tech trailblazer" />

@@ -8,7 +8,7 @@ import './HomePage.css';
 import ProfileListCard from "../Components/ProfileListCard/ProfileListCard";
 import LoginForm from "../Components/LoginForm/LoginForm";
 
-function AdminPage() {
+function AdminPage(props) {
     const [loggedIn] = useOutletContext();
 
     //state
@@ -45,5 +45,3 @@ function AdminPage() {
 };
 
 export default AdminPage;
-
-// website with stats - https://www.baysidegroup.com.au/employers/women-in-ict-in-statistics-how-does-your-company-stack-up#:~:text=Only%2024%25%20of%20computing%20jobs,experience%20gender%20bias%20at%20work. 
