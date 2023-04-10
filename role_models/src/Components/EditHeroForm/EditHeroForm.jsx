@@ -86,7 +86,7 @@ function EditHeroForm(props) {
         <div>
           <label htmlFor="bio_text">Short tagline:</label>
           <textarea
-            maxLength={130}
+            maxLength={150}
             id="bio_text"
             onChange={handleChange}
             value={hero.bio_text}
