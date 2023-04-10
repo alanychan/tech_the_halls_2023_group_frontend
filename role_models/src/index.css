@@ -161,8 +161,10 @@ button {
     margin: 30px 0;
 }
 
-label {
+label,
+li {
     color: var(--darkcolor);
+    ;
 }
 
 ::placeholder {
