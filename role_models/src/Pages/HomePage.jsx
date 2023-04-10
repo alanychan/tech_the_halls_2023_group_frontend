@@ -51,8 +51,10 @@ function HomePage() {
                 <h2>Tech trailblazers</h2>
                 <Carousel>
                 {heroList.map((hero, key) => {
-                    return <HeroCard key={key} heroData={hero} />;
+                    if(hero.featured)
+                        return <HeroCard key={key} heroData={hero} />;
                 })}
+
                 </Carousel>
                 {loggedIn&&
                 <div className="home-hero-buttons">
