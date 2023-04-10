@@ -65,6 +65,15 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
       .then((data) => {
         setQuestions(data);
       });
+
+    fetch(`${import.meta.env.VITE_API_URL
+      }category/`).then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setCategory(data);
+      });
+
   }, []);
 
   const authToken = window.localStorage.getItem("token");
@@ -424,16 +433,11 @@ function UpsertProfileForm({ user: userData, isCreateProfile: stateCreateProfile
                         // onChange={handleChange}
                         rows={5}
                         cols={48}
-                        value={category.map(category_object => {
-                          if (category.category_name == category_object.category) {
-                            return category_object.answer
-                          }
-                        })}
+                        value={category?.category_name}
                       />
                     </li>
-                  )
-                })
-                }
+                  );
+                })}
               </div>
             </>
           }
