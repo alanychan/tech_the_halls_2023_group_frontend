@@ -94,7 +94,7 @@ function ProfilePage(props) {
                 <div className="bottom-right">
                     {profile.video &&
                         <div className="iframe-container">
-                            <iframe width="560" height="315" src={video} title="Profile's YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src={profile.video} title="Profile's YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     }
 
