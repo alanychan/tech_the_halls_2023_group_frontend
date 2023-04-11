@@ -26,3 +26,18 @@ h3 .h3-delete {
     background-color: white !important;
     color: var(--purple) !important;
 }
+
+.delete-confirmation {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 180px;
+    align-items: center;
+}
+
+.delete-confirmation a {
+    color: var(--purple);
+}
+
+.h3-delete-confirmation {
+    margin-top: 50px;
+}
