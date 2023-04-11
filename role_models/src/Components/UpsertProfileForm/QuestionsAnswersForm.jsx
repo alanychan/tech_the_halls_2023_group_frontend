@@ -95,7 +95,7 @@ function QuestionsAnswersForm({user_answers: userAnswers, user_id: userId}) {
         <>
         {/* <form onSubmit={handleSubmit}> */}
             {userAnswers && questions.map((question, key) => {
-                    const answerObj = userAnswers.find((a) => a.question === question.id);
+                    const answerObj = userAnswers.find((a) => a.question === question.question);
                     const value = newAnswers[`answer.${userId}.${question.id}`] ?? (answerObj?.answer ?? "");
                     
                     return (
