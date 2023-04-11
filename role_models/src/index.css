@@ -149,7 +149,7 @@ form {
 }
 
 input,
-select {
+textarea {
     margin: 10px 0 20px;
     width: 100%;
     padding: 10px 5px;
@@ -161,8 +161,10 @@ button {
     margin: 30px 0;
 }
 
-label {
+label,
+li {
     color: var(--darkcolor);
+    ;
 }
 
 ::placeholder {

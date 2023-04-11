@@ -16,7 +16,7 @@ function ProfileCard(props) {
                 <h3>{usersData.first_name} {usersData.last_name}</h3>
                 <p>{usersData.tagline}</p>
             </Link>
-        </div >
+        </div>
         </>
     );
 }
